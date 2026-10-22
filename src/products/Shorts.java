@@ -2,14 +2,13 @@ package products;
 
 public class Shorts extends Product {
 
-	public Shorts(int original, int updated) {
+	public Shorts(double original, double updated) {
 		super(original, updated);
 	}
 
 	@Override
-	public int calcRealDiff() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double calcRealDiff() {
+		return 0.3 * Math.abs(getOriginalPrice() - getUpdatedPrice());
 	}
 
 }

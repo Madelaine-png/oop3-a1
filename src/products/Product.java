@@ -1,29 +1,29 @@
 package products;
 
 public abstract class Product {
-	private int originalPrice;
-	private int updatedPrice;
+	private double originalPrice;
+	private double updatedPrice;
 	
-	public Product(int original, int updated) {
+	public Product(double original, double updated) {
 		setOriginalPrice(original);
 		setUpdatedPrice(updated);
 	}
 	
-	public abstract int calcRealDiff();
+	public abstract double calcRealDiff();
 
-	public int getOriginalPrice() {
+	public double getOriginalPrice() {
 		return originalPrice;
 	}
 
-	public void setOriginalPrice(int originalPrice) {
-		this.originalPrice = originalPrice;
+	public void setOriginalPrice(double original) {
+		this.originalPrice = original;
 	}
 
-	public int getUpdatedPrice() {
+	public double getUpdatedPrice() {
 		return updatedPrice;
 	}
 
-	public void setUpdatedPrice(int updatedPrice) {
-		this.updatedPrice = updatedPrice;
+	public void setUpdatedPrice(double updated) {
+		this.updatedPrice = updated;
 	}
 }
