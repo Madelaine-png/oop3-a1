@@ -1,7 +1,7 @@
 package utilities;
 
 import java.util.Comparator;
-// import problemdomain.Product; // make sure to import your Product class if it's in another package
+import products.Product;
 
 /**
  * <p>
