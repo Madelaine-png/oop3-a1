@@ -1,6 +1,7 @@
 package utilities;
 
 import java.util.Comparator;
+// import problemdomain.Product; // make sure to import your Product class if it's in another package
 
 /**
  * <p>
@@ -39,12 +40,10 @@ public final class BubbleSort
 	 * its elements, as defined by their {@link Comparable#compareTo(Object)}
 	 * method (for products, the calculated difference from calcRealDiff()).
 	 *
-	 * @param <T>   the type of the elements, which must be comparable to
-	 *              each other
 	 * @param array the array to sort in place; a {@code null} array or one with
 	 *              fewer than two elements is left unchanged
 	 */
-	public static <T extends Comparable<T>> void sort( T[] array )
+	public static void sort( Product[] array )
 	{
 		if( array == null || array.length < 2 )
 		{
@@ -63,7 +62,7 @@ public final class BubbleSort
 				// Descending: swap when the left element is smaller than the right one
 				if( array[j].compareTo( array[j + 1] ) < 0 )
 				{
-					T temp = array[j];
+					Product temp = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = temp;
 					swapped = true;
@@ -82,14 +81,13 @@ public final class BubbleSort
 	 * the supplied {@link Comparator} (for example, comparing products by
 	 * original price or updated price).
 	 *
-	 * @param <T>        the type of the elements in the array
 	 * @param array      the array to sort in place; a {@code null} array or one
 	 *                   with fewer than two elements is left unchanged
 	 * @param comparator the comparator that determines the ordering of the
 	 *                   elements; must not be {@code null}
 	 * @throws IllegalArgumentException if {@code comparator} is {@code null}
 	 */
-	public static <T> void sort( T[] array, Comparator<T> comparator )
+	public static void sort( Product[] array, Comparator<Product> comparator )
 	{
 		if( comparator == null )
 		{
@@ -111,7 +109,7 @@ public final class BubbleSort
 			{
 				if( comparator.compare( array[j], array[j + 1] ) < 0 )
 				{
-					T temp = array[j];
+					Product temp = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = temp;
 					swapped = true;
