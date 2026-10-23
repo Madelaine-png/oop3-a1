@@ -1,6 +1,6 @@
 package products;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product> {
 	private double originalPrice;
 	private double updatedPrice;
 	
@@ -25,5 +25,10 @@ public abstract class Product {
 
 	public void setUpdatedPrice(double updated) {
 		this.updatedPrice = updated;
+	}
+	
+	@Override
+	public int compareTo(Product that) {
+		return Double.compare(this.calcRealDiff(), that.calcRealDiff());
 	}
 }
