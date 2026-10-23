@@ -1,6 +1,7 @@
 package utilities;
 
 import java.util.Comparator;
+// import problemdomain.Product; // make sure to import your Product class if it's in another package
 
 /**
  * <p>
@@ -34,12 +35,10 @@ public final class InsertionSort
 	 * its elements, as defined by their {@link Comparable#compareTo(Object)}
 	 * method (for products, the calculated difference from calcRealDiff()).
 	 *
-	 * @param <T>   the type of the elements, which must be comparable to
-	 *              each other
 	 * @param array the array to sort in place; a {@code null} array or one with
 	 *              fewer than two elements is left unchanged
 	 */
-	public static <T extends Comparable<T>> void sort( T[] array )
+	public static void sort( Product[] array )
 	{
 		if( array == null || array.length < 2 )
 		{
@@ -48,7 +47,7 @@ public final class InsertionSort
 
 		for( int i = 1; i < array.length; i++ )
 		{
-			T key = array[i];
+			Product key = array[i];
 			int j = i - 1;
 
 			// Shift smaller elements to the right to make room for descending order
@@ -67,14 +66,13 @@ public final class InsertionSort
 	 * the supplied {@link Comparator} (for example, comparing products by
 	 * original price or updated price).
 	 *
-	 * @param <T>        the type of the elements in the array
 	 * @param array      the array to sort in place; a {@code null} array or one
 	 *                   with fewer than two elements is left unchanged
 	 * @param comparator the comparator that determines the ordering of the
 	 *                   elements; must not be {@code null}
 	 * @throws IllegalArgumentException if {@code comparator} is {@code null}
 	 */
-	public static <T> void sort( T[] array, Comparator<T> comparator )
+	public static void sort( Product[] array, Comparator<Product> comparator )
 	{
 		if( comparator == null )
 		{
@@ -87,7 +85,7 @@ public final class InsertionSort
 
 		for( int i = 1; i < array.length; i++ )
 		{
-			T key = array[i];
+			Product key = array[i];
 			int j = i - 1;
 
 			while( j >= 0 && comparator.compare( array[j], key ) < 0 )
