@@ -1,4 +1,4 @@
-package sortUtils;
+package utilities;
 
 /**
  * A sorting utility
