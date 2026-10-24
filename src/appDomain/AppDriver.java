@@ -21,7 +21,7 @@ import utilities.InsertionSort;
 import utilities.MergeSort;
 import utilities.QuickSort;
 import utilities.SelectionSort;
-// import utilities.?Sort;
+import utilities.HeapSort;
 
 /**
  * <p>
@@ -292,7 +292,7 @@ public class AppDriver
 				if( comparator == null ) QuickSort.sort( products ); else QuickSort.sort( products, comparator );
 				break;
 			case 'z':
-				// TODO: add the algorithm of choice
+				if( comparator == null ) HeapSort.sort( products ); else HeapSort.sort( products, comparator );
 				break;
 		}
 	}
@@ -400,7 +400,7 @@ public class AppDriver
 			case 'q':
 				return "Quick Sort";
 			default:
-				return "";    // remember to fill in the algorithm of choice when done
+				return "Heap Sort";
 		}
 	}
 
