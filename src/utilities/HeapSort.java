@@ -9,7 +9,7 @@ import products.Product;
  */
 public class HeapSort {
 
-    // --- 1. NATURAL COMPARABLE SORT (No Comparator provided) ---
+    // NATURAL COMPARABLE SORT (no comparator needed)
     public static void sort(Product[] products) {
         int n = products.length;
 
@@ -31,9 +31,9 @@ public class HeapSort {
     }
 
     private static void heapify(Product[] products, int n, int i) {
-        int largest = i; // Initialize largest as root
-        int left = 2 * i + 1; // left child index
-        int right = 2 * i + 2; // right child index
+        int largest = i; 
+        int left = 2 * i + 1; 
+        int right = 2 * i + 2; 
 
         // Invert comparison logic (< 0) to ensure final array is DESCENDING
         if (left < n && products[left].compareTo(products[largest]) < 0) {
@@ -55,7 +55,7 @@ public class HeapSort {
         }
     }
 
-    // --- 2. CUSTOM COMPARATOR SORT (Comparator provided) ---
+    // CUSTOM COMPARATOR SORT (Comparator is provided)
     public static void sort(Product[] products, Comparator<Product> comparator) {
         int n = products.length;
 
